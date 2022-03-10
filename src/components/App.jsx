@@ -1,13 +1,28 @@
+import { useEffect, useState } from "react";
+
 function App() {
+  const [adviceData, setAdviceData] = useState({});
+
+  useEffect(() => {
+    fetchNewAdvice();
+  }, []);
+
+  function fetchNewAdvice() {
+    fetch("https://api.adviceslip.com/advice")
+      .then((response) => response.json())
+      .then((slip) => {
+        setAdviceData(slip);
+      });
+  }
+
   return (
     <main className="bg-dark-blue flex justify-center items-center h-screen w-screen">
       <div className="relative font-bold bg-dark-greyish-blue w-[90vw] flex flex-col justify-center items-center rounded-lg">
         <h1 className="uppercase text-center text-neon-green text-xs tracking-[.2rem] m-8">
-          Advice #117
+          Advice #{adviceData?.slip?.id}
         </h1>
         <p className="text-light-cyan text-center text-2xl w-11/12">
-          "It is easy to sit up and take notice, what's difficult is getting up
-          and taking action."
+          {adviceData?.slip?.advice}
         </p>
         <img
           className="mt-6 mb-14"
@@ -17,6 +32,7 @@ function App() {
         <button
           type="submit"
           className="absolute -bottom-8 bg-neon-green rounded-full h-16 w-16 flex justify-center items-center hover:shadow-dice-button active:opacity-70"
+          onClick={fetchNewAdvice}
         >
           <img src="./icon-dice.svg" alt="Icon Dice" />
         </button>
