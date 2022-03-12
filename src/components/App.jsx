@@ -25,9 +25,9 @@ function App() {
           “{adviceData?.slip?.advice}”
         </p>
         <img
-          className="mt-6 mb-14 lg:w-10/12 lg:content-[url('./pattern-divider-desktop.svg')]"
-          src="./pattern-divider-mobile.svg"
-          alt="Pattern Divider"
+          className="mt-6 mb-14 lg:w-10/12 lg:content-[url('pattern-divider-desktop.svg')]"
+          src="pattern-divider-mobile.svg"
+          alt="Divider"
         />
         <button
           type="submit"
