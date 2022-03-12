@@ -25,16 +25,16 @@ function App() {
           “{adviceData?.slip?.advice}”
         </p>
         <img
-          className="mt-6 mb-14 lg:w-10/12 lg:content-[url('pattern-divider-desktop.svg')]"
-          src="pattern-divider-mobile.svg"
-          alt="Divider"
+          className="mt-6 mb-14 lg:w-10/12 lg:content-[url('./assets/pattern-divider-desktop.svg')]"
+          src="./assets/pattern-divider-mobile.svg"
+          alt="Pattern Divider"
         />
         <button
           type="submit"
           className="absolute -bottom-8 bg-neon-green rounded-full h-16 w-16 flex justify-center items-center hover:shadow-dice-button active:opacity-70"
           onClick={fetchNewAdvice}
         >
-          <img src="./icon-dice.svg" alt="Icon Dice" />
+          <img src="./assets/icon-dice.svg" alt="Icon Dice" />
         </button>
       </div>
     </main>
