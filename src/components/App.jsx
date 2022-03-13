@@ -24,9 +24,9 @@ function App() {
         <h1 className="uppercase text-center text-neon-green text-xs tracking-[.2rem] m-8">
           Advice #{adviceData?.slip?.id}
         </h1>
-        <p className="text-light-cyan text-center text-2xl w-10/12">
+        <blockquote className="text-light-cyan text-center text-2xl w-10/12">
           “{adviceData?.slip?.advice}”
-        </p>
+        </blockquote>
         <img
           className={`mt-6 mb-14 lg:w-10/12 lg:content-[url("${dividerDesktop}")]`}
           src={dividerMobile}
